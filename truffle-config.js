@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 const getEnv = env => {
   const value = process.env[env];
   if (typeof value === 'undefined') {
@@ -10,8 +13,8 @@ const mnemonic = getEnv('ETH_WALLET_MNEMONIC');
 const liveNetwork = getEnv('ETH_LIVE_NETWORK');
 const liveNetworkId = getEnv('ETH_LIVE_NETWORK_ID');
 
-const Web3 = require("web3");
-const web3 = new Web3();
+//const Web3 = require("web3");
+//const web3 = new Web3();
 
 /**
  * Use this file to configure your truffle project. It's seeded with some
@@ -53,11 +56,11 @@ const web3 = new Web3();
  
    networks: {
 
-    live: {
-      provider: () => new HDWalletProvider(mnemonic, liveNetwork),
-      network_id: liveNetworkId,
-      gasPrice: web3.utils.toWei('10', 'gwei')
-    },
+    //live: {
+    //  provider: () => new HDWalletProvider(mnemonic, liveNetwork),
+    //  network_id: liveNetworkId,
+    //  gasPrice: web3.utils.toWei('10', 'gwei')
+    //},
      // Useful for testing. The `development` name is special - truffle uses it by default
      // if it's defined here and no other network is specified at the command line.
      // You should run a client (like ganache-cli, geth or parity) in a separate terminal
@@ -80,14 +83,14 @@ const web3 = new Web3();
      // },
      // Useful for deploying to a public network.
      // NB: It's important to wrap the provider as a function.
-    //  ropsten: {
-    //  provider: () => new HDWalletProvider(mnemonic, 'https://mainnet.infura.io/v3/6512d6d9ce7e484b9598868d6e5a4334'),
-    //  network_id: 1,       // Ropsten's id
-    //  gas: 5500000,        // Ropsten has a lower block limit than mainnet
-    //  confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-    //  timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-    //  skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-    //  },
+     ropsten: {
+     provider: () => new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/v3/6512d6d9ce7e484b9598868d6e5a4334'),
+     network_id: 3,       // Ropsten's id
+     gas: 4000000,        // Ropsten has a lower block limit than mainnet
+     confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+     timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+     skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+     },
      // Useful for private networks
      // private: {
      // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),

@@ -15,7 +15,7 @@ contract ZYPToken is ERC20, ERC20Burnable, Pausable, AccessControl {
     constructor() ERC20("ZYPToken", "ZYP") {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _setupRole(PAUSER_ROLE, msg.sender);
-        _mint(msg.sender, 5000000000 * 10 ** decimals());
+        _mint(msg.sender, 6000000000 * 10 ** decimals());
         _setupRole(MINTER_ROLE, msg.sender);
     }
 
