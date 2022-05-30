@@ -37,7 +37,7 @@ const liveNetworkId = getEnv('ETH_LIVE_NETWORK_ID');
  */
 
  const HDWalletProvider = require('@truffle/hdwallet-provider');
- //const infuraKey = '2990b2994aa74280b79d298f584de90d';
+ 
  //
  // const fs = require('fs');
  //const mnemonic = '';
@@ -84,7 +84,7 @@ const liveNetworkId = getEnv('ETH_LIVE_NETWORK_ID');
      // Useful for deploying to a public network.
      // NB: It's important to wrap the provider as a function.
      ropsten: {
-     provider: () => new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/v3/6512d6d9ce7e484b9598868d6e5a4334'),
+     provider: () => new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/v3/6512d6d9ce7e484b9598868d6e5a43'),
      network_id: 3,       // Ropsten's id
      gas: 4000000,        // Ropsten has a lower block limit than mainnet
      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
